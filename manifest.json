@@ -1,0 +1,35 @@
+{
+  "description": "Our extension aims to reduce the appeal of spending excessive amounts of time on the website reddit.com by intentionally throttling its performance. By slowing down the loading and rendering of the site, we hope to make the user experience less enjoyable and encourage more mindful use of the platform. This extension is not meant to block access to the site, but rather to provide a gentle nudge towards a healthier balance of online and offline activities",
+  "manifest_version": 3,
+  "name": "Reddit Throttler",
+  "version": "1.0.0",
+  "version_name": "alpha-dev",
+  "icons": {
+    "48": "icon.png"
+  },
+  "action": {
+    "default_icon": "icon.png",
+    "default_title": "Reddit Throttler"
+    // ,"default_popup": "popup.html"
+  },
+  "permissions": ["contextMenus","windows","tabs","webRequest", "declarativeNetRequest", "declarativeNetRequestWithHostAccess", "storage", "activeTab", "scripting"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "run_at": "document_idle",
+      "js": ["content.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["background.js", "content.js", "icon.png", "popup.html", "slower.js", "content.js"],
+      "matches": ["<all_urls>"],
+      "extension_ids": []
+    }
+  ]
+}
+
+
