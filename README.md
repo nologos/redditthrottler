@@ -3,6 +3,10 @@ Our extension aims to reduce the appeal of spending excessive amounts of time on
 
 
 # how to generate a new version
+install web-ext node application
+https://extensionworkshop.com/documentation/develop/getting-started-with-web-ext/
+'''npm install --global web-ext'''
+
 from /src run to generate zip from curent files
 '''bash
 web-ext build --overwrite-dest'''
@@ -11,3 +15,13 @@ web-ext build --overwrite-dest'''
 go to mozilla portal, upload the zip and follow further instructions
 
 https://addons.mozilla.org/en-GB/developers/
+
+
+# how to generate using NPM
+run 
+'''npm run build'''
+
+
+# TODO
+CICD
+https://extensionworkshop.com/documentation/publish/signing-and-distribution-overview/#distributing-your-addon
